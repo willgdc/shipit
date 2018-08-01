@@ -119,9 +119,9 @@ class UpsClient extends ShipperClient
     {activities, status}
 
   requestOptions: ({trackingNumber, reference, test}) ->
-    hostname = if test then 'wwwcie.ups.com' else 'www.ups.com'
+    hostname = if test then 'wwwcie.ups.com' else 'onlinetools.ups.com'
     method: 'POST'
-    uri: "https://#{hostname}/ups.app/xml/Track"
+    uri: "https://#{hostname}/webservices/Track"
     body: @generateRequest trackingNumber, reference
 
 module.exports = {UpsClient}
